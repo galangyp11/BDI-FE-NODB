@@ -1,37 +1,46 @@
 import './App.css';
 import React from 'react';
-import Navbar from './Navbar';
-import NavbarB from './NavbarB';
-import About from './About';
-import Home from './Home';
-import Cerita from './Cerita';
-import CeritaDetail from './CeritaDetail';
+
+import About from './components/About';
+import CeritaDetail from './components/CeritaDetail';
 import ListDongeng from './components/ListDongeng';
+import AlertWindow from './components/AlertWindow';
+import NavbarB from './pages/NavbarB';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 function App() {
 
+  const [isScreen, setIsScreen] = useState(
+    window.matchMedia("(min-width: 1024px ) ").matches
+  )
+
+  useEffect(() => {
+    window
+    .matchMedia("(min-width: 1024px ) ")
+    .addEventListener('change', e => setIsScreen( e.matches ));
+  }, []);
+
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         
         <div className="content">
           <Switch>
-            <Route exact path="/">
-              <Navbar />
-              <ListDongeng />
+            <Route exact path="/" >
+              {!isScreen ? <AlertWindow/> : <ListDongeng/>}
+
             </Route>
+
             <Route exact path="/about">
-              <Navbar />
-              <About />
+              {!isScreen ? <AlertWindow/> : <About/>}
+           
             </Route>
-            {/* <Route exact path="/home/#section-two">
-              <Cerita />
-            </Route> */}
-            <Route exact path="/cerita/:id">
-              <CeritaDetail />
-              <NavbarB />
+
+            <Route exact path="/:id">
+              {!isScreen ? <AlertWindow/> : <CeritaDetail />}
+
             </Route>
           </Switch>
         </div>

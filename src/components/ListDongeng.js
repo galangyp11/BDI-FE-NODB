@@ -10,7 +10,7 @@ const ListDongeng = ( ) => {
     }, []);
     
     const getDongengs = async () => {
-        const response = await Axios.get(`https://baca-dongeng-indonesia.herokuapp.com/`);
+        const response = await Axios.get(`https://bdi-be.vercel.app/`);
         setDongengs(response.data);
         console.log(response.data);
     }

@@ -39,7 +39,7 @@ function CeritaDetail () {
     }, []);
     
     const getDongengById = async () => {
-        const response = await axios.get(`https://baca-dongeng-indonesia.herokuapp.com/${id}`);
+        const response = await axios.get(`https://bdi-be.vercel.app/${id}`);
         setDongengById(response.data);
         console.log(response.data);
     }

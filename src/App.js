@@ -1,11 +1,10 @@
 import './App.css';
 import React from 'react';
-
+import { useState, useEffect } from 'react';
 import About from './components/About';
 import CeritaDetail from './components/CeritaDetail';
 import ListDongeng from './components/ListDongeng';
 import AlertWindow from './components/AlertWindow';
-import NavbarB from './pages/NavbarB';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 

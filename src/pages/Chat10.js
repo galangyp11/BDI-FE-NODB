@@ -4,6 +4,7 @@ import "./pages.css";
 
 import Sound from "react-sound";
 import soundChat10 from '.././sound/chat10.mp3';
+import bsKancil from '.././sound/bs-kancil-pak-tani.mp3';
 
 const Chat10 = ({ dongengChat10 }) => {
     return ( 
@@ -12,6 +13,12 @@ const Chat10 = ({ dongengChat10 }) => {
                 url={soundChat10}
                 playStatus={Sound.status.PLAYING}
                 playFromPosition={300}
+            />
+             <Sound
+                url={bsKancil}
+                playStatus={Sound.status.PLAYING}
+                playFromPosition={300}
+                loop={true}
             />
             <div className="hal-chat-kancil">
            <motion.div 

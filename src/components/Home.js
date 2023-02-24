@@ -18,6 +18,7 @@ const Home = ({ dongengs }) => {
     console.log(dongengs)
     return (
         <div className="home">
+            
             <div className="bg-1">
                 <MouseParallaxContainer  
                     className="parallax-container" 

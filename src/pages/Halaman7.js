@@ -1,4 +1,5 @@
 import "./pages.css";
+import Sound from "react-sound";
 import bsKancil from '.././sound/bs-kancil-pak-tani.mp3';
 
 const Halaman7 = ({ dongengHalaman7 }) => {

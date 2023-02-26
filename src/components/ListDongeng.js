@@ -20,12 +20,12 @@ const ListDongeng = ( ) => {
 
     return ( 
         <div>
-            <Sound
+            {/* <Sound
                 url={bsBeranda}
                 playStatus={Sound.status.PLAYING}
                 playFromPosition={0}
                 loop={true}
-            />
+            /> */}
             <Home dongengs={dongengs}/>
         </div>
      );
